@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "target": "esnext",
+    "module": "esnext",
+    //解决： Cannot find name 'React'.ts(2304)
+    "jsx": "preserve",
+    "moduleResolution": "node"
+  },
+  "paths": {
+    "@/*": [
+      "src/*"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "build"
+  ],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+  ]
+}
