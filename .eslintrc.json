@@ -1,0 +1,58 @@
+{
+    // 'defineProps' is not defined.
+    "globals": {
+        "defineProps": "readonly",
+        "defineEmits": "readonly",
+        "defineExpose": "readonly",
+        "withDefaults": "readonly"
+    },
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "node": true
+    },
+    "extends": [
+        "plugin:vue/essential",
+        "airbnb-base",
+        "plugin:prettier/recommended" // 添加 prettier 插件
+    ],
+    "parserOptions": {
+        "ecmaVersion": 13,
+        "parser": "@typescript-eslint/parser",
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "plugins": [
+        "vue",
+        "@typescript-eslint"
+    ],
+    // 解决Unable to resolve path to module '@/components/HelloWorld.vue'.
+    "rules": {
+        "import/no-unresolved": "off",
+        "import/extensions": "off",
+        "import/no-absolute-path": "off",
+        "import/no-extraneous-dependencies": "off",
+        "vue/no-multiple-template-root": "off", // 允许多个根元素
+        // 这个规则添加一个白名单，即指定的入参名称不予限制
+        "no-param-reassign": [
+            "error",
+            {
+                "props": true,
+                "ignorePropertyModificationsFor": [
+                    "state",
+                    "config"
+                ]
+            }
+        ]
+        // "import/extensions": [
+        //     "error",
+        //     "always",
+        //     {
+        //         "js": "never",
+        //         "vue": "never"
+        //     }
+        // ],
+    }
+}
