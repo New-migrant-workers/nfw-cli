@@ -1,3 +1,5 @@
+/* eslint no-shadow: ["error", { "allow": ["state"] }] */
+// https://stackoverflow.com/questions/43843180/eslint-state-already-declared-vuex
 import { createStore, MutationTree, ActionTree, GetterTree } from 'vuex'
 import { getUser } from '../ajax/apis'
 

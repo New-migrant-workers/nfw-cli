@@ -6,5 +6,5 @@
     <router-view />
 </template>
 <style lang="less">
-@import "./app.less";
+@import './app.less';
 </style>

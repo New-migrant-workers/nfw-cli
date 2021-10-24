@@ -9,8 +9,8 @@ const http = axios.create({
 
 http.interceptors.request.use(
     (config) => {
-        config.headers['Authorization'] = store.state.token
-            ? 'Bearer ' + store.state.token
+        config.headers.Authorization = store.state.token
+            ? `Bearer ${store.state.token}`
             : 'Bearer'
         return config
     },
