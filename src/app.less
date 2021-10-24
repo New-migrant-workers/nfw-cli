@@ -1,4 +1,12 @@
 #nav {
     padding: 0;
     margin: 0;
+    // 通过alias设置路径别名，从而便捷使用绝对路径。
+    // 注意在less文件中使用alias里定义的路径别名时，
+    // 需要带上~前缀，否则打包时仍会被识别为普通路径
+    background: url('~@/assets/imgs/logo.png');
+    display: flex;
+    transform: translateX(50%);
 }
+
+@height-test: 24px;

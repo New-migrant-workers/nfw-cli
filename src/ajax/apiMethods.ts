@@ -1,28 +1,20 @@
 import http from './http'
 
-export function apiGet<T>(url: string, params?: any) {
-    return new Promise(async (resolve) => {
-        const res = await http.get<T>(url, params)
-        resolve(res.data)
-    })
+export async function apiGet<T>(url: string, params?: any) {
+    const res = await http.get<T>(url, params)
+    return Promise.resolve(res)
 }
-export function apiPost<T>(url: string, data?: any) {
-    return new Promise(async (resolve) => {
-        const res = await http.post<T>(url, data)
-        resolve(res.data)
-    })
+export async function apiPost<T>(url: string, data?: any) {
+    const res = await http.post<T>(url, data)
+    return Promise.resolve(res)
 }
 
-export function apiPut<T>(url: string, data?: any) {
-    return new Promise(async (resolve) => {
-        const res = await http.put<T>(url, data)
-        resolve(res.data)
-    })
+export async function apiPut<T>(url: string, data?: any) {
+    const res = await http.put<T>(url, data)
+    return Promise.resolve(res.data)
 }
 
-export function apiDelete<T>(url: string, params?: any) {
-    return new Promise(async (resolve) => {
-        const res = await http.delete<T>(url, params)
-        resolve(res.data)
-    })
+export async function apiDelete<T>(url: string, params?: any) {
+    const res = await http.delete<T>(url, params)
+    return Promise.resolve(res)
 }

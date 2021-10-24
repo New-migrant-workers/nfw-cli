@@ -1,5 +1,5 @@
 {
-  "name": "shop",
+  "name": "my-cli",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -7,18 +7,17 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config build/webpack.prod.js",
     "dev": "webpack-dev-server --config build/webpack.dev.js",
-    "start": "webpack serve --open",
-    "server": "node server.js",
     "prepare": "husky install"
   },
+  "homepage": "https://MrXwq.github.io/my-cli",
   "lint-staged": {
     "src/**/*.{j,t}s?(x)": [
-        "eslint --fix",
-        "prettier --write"
+      "eslint --fix",
+      "prettier --write"
     ]
   },
   "keywords": [],
-  "author": "",
+  "author": "MrXwq",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.15.5",
@@ -31,8 +30,9 @@
     "@vue/compiler-sfc": "^3.2.20",
     "autoprefixer": "^10.3.4",
     "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^6.2.0",
-    "cssnano": "^5.0.8",
+    "css-minimizer-webpack-plugin": "^3.1.1",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
@@ -58,6 +58,7 @@
   "dependencies": {
     "@types/lodash": "^4.14.172",
     "axios": "^0.20.0-0",
+    "core-js": "^3.18.3",
     "lodash": "^4.17.21",
     "vue": "^3.2.9",
     "vue-router": "4",

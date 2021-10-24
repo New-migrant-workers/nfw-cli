@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
     "outDir": "./dist/",
     "sourceMap": true,
     "noImplicitAny": true,
@@ -7,12 +8,18 @@
     "module": "esnext",
     //解决： Cannot find name 'React'.ts(2304)
     "jsx": "preserve",
-    "moduleResolution": "node"
-  },
-  "paths": {
-    "@/*": [
-      "src/*"
-    ]
+    "moduleResolution": "node",
+    // 允许使用 import foo from 'foo' 来导入一个通过 export = foo 导出的模块。
+    "allowSyntheticDefaultImports": true,
+    // 这个要生效必须配置baseUrl
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "@less/*": [
+        "src/assets/less/*"
+      ]
+    },
   },
   "exclude": [
     "node_modules",
@@ -22,5 +29,6 @@
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
+    "src/index.d.ts",
   ]
 }

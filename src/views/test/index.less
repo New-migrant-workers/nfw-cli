@@ -1,3 +1,10 @@
+@import '@/app.less';
+
+// 当less-loader处理时，会将这个less文件里@import的app.less合并进来
+// 最后只输出这个less文件。
+// 但app.less里的url()本来是以app.less写的相对路径，这样合并又不对url()做处理的话
+// 就导致了合并后无法定位到url()里的资源
 .a {
     color: aqua;
+    height: @height-test;
 }
