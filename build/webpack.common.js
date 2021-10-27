@@ -13,10 +13,6 @@ module.exports = {
         // 不论是否添加任何新的本地依赖（本地创建文件，不是引外面的文件，比如lodash）
         // 对于前后两次构建，vendor hash 都应该保持一致
         moduleIds: 'deterministic',
-        splitChunks: {
-            // 移除了重复的依赖模块,并且将其从 main bundle 中移除，减轻了大小
-            chunks: 'all'
-        },
         // Webpack在浏览器端运行时需要的代码单独抽离到一个文件
         // 将 runtime 代码拆分为一个单独的 chunk。
         // 将其设置为 single 来为所有 chunk 创建一个 runtime bundle：

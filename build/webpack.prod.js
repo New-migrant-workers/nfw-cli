@@ -1,10 +1,10 @@
 const path = require('path')
 const { merge } = require('webpack-merge')
-const webpackBaseConfig = require('./webpack.common')
 const webpack = require('webpack')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const miniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const webpackBaseConfig = require('./webpack.common')
 
 module.exports = merge(webpackBaseConfig, {
     mode: 'production',
