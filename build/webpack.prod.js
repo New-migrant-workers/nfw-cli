@@ -2,7 +2,7 @@ const path = require('path')
 const { merge } = require('webpack-merge')
 const webpack = require('webpack')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const miniCssExtractPlugin = require('mini-css-extract-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const webpackBaseConfig = require('./webpack.common')
 
@@ -41,7 +41,7 @@ module.exports = merge(webpackBaseConfig, {
                     // 这样可以使用 CSS / JS 文件的并行加载。 创建单独的 CSS 文件。
                     // 对于 development 模式（包括 webpack - dev - server），
                     // 你可以使用 style - loader，因为它可以使用多个 标签将 CSS 插入到 DOM 中，并且反应会更快。
-                    miniCssExtractPlugin.loader,
+                    MiniCssExtractPlugin.loader,
                     // source map 的生成依赖于 devtool选项， devtool开启了，就不用设置sourceMap: true了
                     'css-loader',
                     'postcss-loader',
@@ -53,7 +53,7 @@ module.exports = merge(webpackBaseConfig, {
     plugins: [
         // 每次打包先删除之前打包生成的文件
         new CleanWebpackPlugin(),
-        new miniCssExtractPlugin({
+        new MiniCssExtractPlugin({
             // [contenthash] 启动长期缓存
             filename: 'css/[name].[contenthash].css', // 设置导出css名称，[name]占位符对应chunkName
             chunkFilename: (pathData) => {
